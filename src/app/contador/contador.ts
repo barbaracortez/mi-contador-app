@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-contador',
@@ -9,16 +9,16 @@ import { Component } from '@angular/core';
 
 export class ContadorComponent {
 
-  numero: number = 0;
+  numero= signal(0);
 
   aumentar(){
-    this.numero++;
+    this.numero.update(n => n + 1)
   }
   disminuir(){
-    this.numero--;
+    this.numero.update(n => n - 1)
   }
   reiniciar(){
-    this.numero = 0
+    this.numero.set(0)
   }
 
 }

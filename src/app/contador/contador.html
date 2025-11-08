@@ -1,9 +1,9 @@
 <div class="contenedor">
-    <h2>Contador: {{ numero }}</h2>
+    <h2>Número: {{ numero() }}</h2>
 
     <button (click)="aumentar()">+</button>
     <button (click)="disminuir()">-</button>
-    <button (click)="reiniciar()">REiniciar</button>
+    <button (click)="reiniciar()">Reiniciar</button>
 
     <p *ngIf="numero > 0">¡Número positivo!</p>
     <p *ngIf="numero < 0">¡Número negativo!</p>
