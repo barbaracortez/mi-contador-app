@@ -1,19 +1,17 @@
-<div class="contenedor">
-    <h2>Contador</h2>
-    <p>Número actual: {{ numero() }}</p>
+<div class="card">
+    <h2>Contador App</h2>
 
-    <label for="">
+    <div class="numero">{{ numero()}}</div>
+
+    <label class="label">
         Paso:
-        <input type="number" (input)="actualizarPaso($event.target.value)">
+        <input type="number" (input)="actualizarPaso()($event.target.value)">
     </label>
-    <br><br>
+    <div class="botones">
+        <button class="btn" (click)="disminuir()"> - {{ Paso()}}</button>
+        <button class="btn" (click)="aumentar()"> + {{ paso()}}</button>
+    </div>
 
-    <button (click)="aumentar()">+{{ paso() }}</button>
-    <button (click)="disminuir()">-{{ paso() }}</button>
-    <button (click)="reiniciar()">Reiniciar</button>
+    <button class="btn reset" (click)="reiniciar()">Reiniciar</button>
 
-    <p *ngIf="numero > 0">¡Número positivo!</p>
-    <p *ngIf="numero < 0">¡Número negativo!</p>
-    <p *ngIf="numero === 0">Está en cero</p>
-    
 </div>
