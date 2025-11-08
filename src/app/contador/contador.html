@@ -1,8 +1,15 @@
 <div class="contenedor">
-    <h2>Número: {{ numero() }}</h2>
+    <h2>Contador</h2>
+    <p>Número actual: {{ numero() }}</p>
 
-    <button (click)="aumentar()">+</button>
-    <button (click)="disminuir()">-</button>
+    <label for="">
+        Paso:
+        <input type="number" (input)="actualizarPaso($event.target.value)">
+    </label>
+    <br><br>
+
+    <button (click)="aumentar()">+{{ paso() }}</button>
+    <button (click)="disminuir()">-{{ paso() }}</button>
     <button (click)="reiniciar()">Reiniciar</button>
 
     <p *ngIf="numero > 0">¡Número positivo!</p>
